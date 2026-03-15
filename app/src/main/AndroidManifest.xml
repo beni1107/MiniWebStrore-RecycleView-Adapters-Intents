@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniWebStroreRecycleViewAdaptersIntents">
         <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProductsActivity"
             android:exported="false" />
         <activity

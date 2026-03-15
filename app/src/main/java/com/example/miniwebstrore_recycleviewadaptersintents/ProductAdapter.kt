@@ -1,5 +1,6 @@
 package com.example.miniwebstrore_recycleviewadaptersintents
 
+import android.content.Intent
 import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,22 @@ class ProductAdapter(val product_list: ArrayList<ProductModel>) : RecyclerView.A
         init{
             itemImage =itemView.findViewById<ImageView>(R.id.product_imageView)
             itemName = itemView.findViewById<TextView>(R.id.product_name)
+
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if ( position != RecyclerView.NO_POSITION) {
+
+                    val product = product_list[position]
+                    val context = itemView.context
+                    val intent = Intent(context, ProductListActivity::class.java)
+                    intent.putExtra("product_name",product.product_name)
+                    context.startActivity(intent)
+
+
+                }
+
+            }
+
         }
     }
 }
